@@ -1,0 +1,26 @@
+Instructions: http://apitest.sertifi.net/index-fe.html
+
+Requirements:
+[ ] Display School Year Summary  (Year, Attendence, Average GPA)
+[ ] Display Selected Year Detail (Year, Student List [Name, GPA])
+[ ] Animations ("Transitions between actions need to provide visual feedback.")
+[ ] Unit Tests
+
+
+Decisions:
+• Use separate views for Summary vs Detail or display on same view?
+  + display details in a side panel
+
+• When to refresh data?
+  - OPTION 0 - never. Only when page/module loads.
+  - OPTION 1 - fetch fresh data on every view navigation.
+  - OPTION 2 - fetch data once; provide refresh button to user.
+  - OPTION 3 - display cached data, but refresh on each view navitation.
+  
+  + Keep it simple, just fetch once on page load.
+
+
+  Tasks:
+  [ ] Create View
+  [ ] Create Detail Component
+  [ ] Create StudentService to fetch data
