@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -7,12 +8,14 @@ import { of } from 'rxjs';
 export class StudentService {
 
   public getStudents() {
-    return of(FAKE_STUDENTS);
+    return of(FAKE_STUDENTS).pipe(
+      map(dtos => dtos.map(transform))
+    );
   }
 
 }
 
-interface Student {
+interface StudentDto {
   Id        : number;
   Name      : string;
   StartYear : number;
@@ -20,7 +23,27 @@ interface Student {
   GPARecord : number[];
 }
 
-const FAKE_STUDENTS: Student[] = [
+export interface Student {
+  id            : number,
+  name          : string;
+  gpaByYear     : Map<number, number>;
+  yearsAttended : number[]
+}
+
+function transform(dto: StudentDto): Student {
+  const gpaMap = new Map<number, number>();
+  dto.GPARecord.forEach((gpa, i) => gpaMap.set(dto.StartYear + i, gpa));
+  const yearsAttended = dto.GPARecord.map((gpa, i) => dto.StartYear + i);
+
+  return {
+    id        : dto.Id,
+    name      : dto.Name,
+    gpaByYear : gpaMap,
+    yearsAttended
+  };
+} 
+
+const FAKE_STUDENTS: StudentDto[] = [
   {
       "Id": 1,
       "Name": "Jack",
