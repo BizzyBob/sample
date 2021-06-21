@@ -34,10 +34,16 @@
                 </button>
             </mat-toolbar>
             <mat-list>
-                <div mat-subheader>Students</div>
+                <div mat-subheader>
+                    <span>Student</span>
+                    <span class="spacer"></span>
+                    <span>GPA</span>
+                </div>
                 <mat-list>
                     <mat-list-item *ngFor="let student of details.students">
-                        {{ student.name }} ({{ student.gpaByYear.get(details.year) | number : '1.2-2' }})
+                        <span>{{ student.name }}</span>
+                        <span class="spacer"></span>
+                        <span>{{ student.gpaByYear.get(details.year) | number : '1.2-2' }}</span>
                     </mat-list-item>
                 </mat-list>
             </mat-list>
