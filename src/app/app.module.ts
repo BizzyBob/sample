@@ -7,7 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
-import { MatCardModule } from '@angular/material/card';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatRippleModule } from '@angular/material/core';
+import { MatListModule } from '@angular/material/list';
+
 import { SchoolYearComponent } from './school-year/school-year.component';
 
 @NgModule({
@@ -21,7 +24,9 @@ import { SchoolYearComponent } from './school-year/school-year.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatTableModule,
-    MatCardModule
+    MatSidenavModule,
+    MatRippleModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

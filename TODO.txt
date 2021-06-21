@@ -1,9 +1,9 @@
 Instructions: http://apitest.sertifi.net/index-fe.html
 
 Requirements:
-[ ] Display School Year Summary  (Year, Attendence, Average GPA)
-[ ] Display Selected Year Detail (Year, Student List [Name, GPA])
-[ ] Animations ("Transitions between actions need to provide visual feedback.")
+[x] Display School Year Summary  (Year, Attendence, Average GPA)
+[x] Display Selected Year Detail (Year, Student List [Name, GPA])
+[x] Animations ("Transitions between actions need to provide visual feedback.")
 [ ] Unit Tests
 
 
@@ -21,6 +21,6 @@ Decisions:
 
 
   Tasks:
-  [ ] Create View
-  [ ] Create Detail Component
-  [ ] Create StudentService to fetch data
+  [x] Create View
+  [x] Create Detail Component
+  [x] Create StudentService to fetch data
