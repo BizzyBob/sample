@@ -26,7 +26,13 @@
 
     <mat-drawer #drawer mode="side" position="end" class="drawer">
         <ng-container *ngIf="details$ | async as details">
-            <mat-toolbar>{{ details.year }} Details</mat-toolbar>
+            <mat-toolbar>
+                <span>{{ details.year }} Details</span>
+                <span class="spacer"></span>
+                <button mat-icon-button (click)="drawer.close()">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-toolbar>
             <mat-list>
                 <div mat-subheader>Students</div>
                 <mat-list>

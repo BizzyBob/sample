@@ -11,6 +11,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatRippleModule } from '@angular/material/core';
 import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 import { SchoolYearComponent } from './school-year/school-year.component';
 
@@ -28,7 +30,9 @@ import { SchoolYearComponent } from './school-year/school-year.component';
     MatTableModule,
     MatSidenavModule,
     MatRippleModule,
-    MatListModule
+    MatListModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
