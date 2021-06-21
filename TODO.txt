@@ -6,7 +6,7 @@ Requirements:
 [x] Animations ("Transitions between actions need to provide visual feedback.")
 [ ] Unit Tests
 
-
+x
 Decisions:
 • Use separate views for Summary vs Detail or display on same view?
   + display details in a side panel

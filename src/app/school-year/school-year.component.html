@@ -16,7 +16,7 @@
 
         <ng-container matColumnDef="gpa">
             <mat-header-cell *matHeaderCellDef>GPA</mat-header-cell>
-            <mat-cell *matCellDef="let row">{{ row.averageGpa }}</mat-cell>
+            <mat-cell *matCellDef="let row">{{ row.averageGpa | number : '1.2-2' }}</mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
@@ -31,7 +31,7 @@
                 <div mat-subheader>Students</div>
                 <mat-list>
                     <mat-list-item *ngFor="let student of details.students">
-                        {{ student.name }} ({{ student.gpaByYear.get(details.year) }})
+                        {{ student.name }} ({{ student.gpaByYear.get(details.year) | number : '1.2-2' }})
                     </mat-list-item>
                 </mat-list>
             </mat-list>

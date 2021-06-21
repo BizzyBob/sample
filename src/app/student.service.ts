@@ -1,5 +1,5 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -7,8 +7,12 @@ import { map } from 'rxjs/operators';
 })
 export class StudentService {
 
+  private api = 'http://apitest.sertifi.net/api';
+
+  constructor(private http: HttpClient) { }
+
   public getStudents() {
-    return of(FAKE_STUDENTS).pipe(
+    return this.http.get<StudentDto[]>(`${this.api}/Students`).pipe(
       map(dtos => dtos.map(transform))
     );
   }
@@ -42,20 +46,3 @@ function transform(dto: StudentDto): Student {
     yearsAttended
   };
 } 
-
-const FAKE_STUDENTS: StudentDto[] = [
-  {
-      "Id": 1,
-      "Name": "Jack",
-      "StartYear": 2013,
-      "EndYear": 2016,
-      "GPARecord": [ 3.4, 2.1, 1.2, 3.6 ]
-  },
-  {
-      "Id": 2,
-      "Name": "Jill",
-      "StartYear": 2010,
-      "EndYear": 2013,
-      "GPARecord": [ 3.3, 2.3, 1.1, 3.7 ]
-  }
-];
