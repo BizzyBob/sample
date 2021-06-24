@@ -2,7 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { StudentService, Student } from '../student.service';
+import { Student } from '../models';
+import { StudentService } from '../student.service';
 
 @Component({
   selector: 'app-school-year',

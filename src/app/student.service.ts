@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { StudentDto, Student } from './models';
 
 @Injectable({
   providedIn: 'root'
@@ -17,21 +18,6 @@ export class StudentService {
     );
   }
 
-}
-
-interface StudentDto {
-  Id        : number;
-  Name      : string;
-  StartYear : number;
-  EndYear   : number;
-  GPARecord : number[];
-}
-
-export interface Student {
-  id            : number,
-  name          : string;
-  gpaByYear     : Map<number, number>;
-  yearsAttended : number[]
 }
 
 function transform(dto: StudentDto): Student {
