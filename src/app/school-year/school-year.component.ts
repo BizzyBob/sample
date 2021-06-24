@@ -3,7 +3,7 @@ import { MatDrawer } from '@angular/material/sidenav';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { Student } from '../models';
-import { StudentService } from '../student.service';
+import { StudentService } from '../services/student.service';
 
 @Component({
   selector: 'app-school-year',
